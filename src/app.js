@@ -2,16 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-
+import catergoryRouter from '../routes/catergory'
 const app = express();
 
 // middleware
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json())
+// router
+app.use("/api",catergoryRouter)     
 
 // connnect database
-mongoose.connect('mongodb://localhost:27017/nextjs')
+// mongoose.connect('mongodb://localhost:27017/nextjs')
+mongoose.connect('mongodb://127.0.0.1:27017/nextjs')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
     
