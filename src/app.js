@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-import catergoryRouter from '../routes/catergory'
+import categoryRouter from '../routes/category'
 const app = express();
 
 // middleware
@@ -10,7 +10,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json())
 // router
-app.use("/api",catergoryRouter)     
+app.use("/api",categoryRouter)     
 
 // connnect database
 // mongoose.connect('mongodb://localhost:27017/nextjs')

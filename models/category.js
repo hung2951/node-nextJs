@@ -1,13 +1,13 @@
 import mongoose,{Schema} from "mongoose";
-const catergorySchema = new Schema({
+const categorySchema = new Schema({
     name:{
         type:String,
         require:true
     },
     status:{
-        type:String,
-        require:true
+        type:Boolean,
+        default:true
     }
 
 },{ timestamps: true })
-export default mongoose.model("catergory",catergorySchema)  
+export default mongoose.model("category",categorySchema)  
