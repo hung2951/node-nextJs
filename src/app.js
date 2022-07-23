@@ -6,6 +6,8 @@ import ordersRoute from '../routes/orders'
 import orderDetailRoute from '../routes/order-detail'
 import userRoute from "../routes/user"
 import authRoute from "../routes/auth"
+import productRoute from '../routes/product';
+
 const app = express();
 
 // middleware
@@ -20,11 +22,12 @@ app.use('/api',orderDetailRoute)
 app.use("/api", userRoute)
 app.use("/api", authRoute)
 
+//route products
+app.use("/api", productRoute);
 // connnect database
 mongoose.connect('mongodb://localhost:27017/nextjs')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
-    
 // connection
 const PORT = 8000;
 app.listen(PORT, () => {
