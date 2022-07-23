@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import ordersRoute from '../routes/orders'
 import orderDetailRoute from '../routes/order-detail'
+import userRoute from "../routes/user"
+import authRoute from "../routes/auth"
 const app = express();
 
 // middleware
@@ -13,6 +15,11 @@ app.use(express.json())
 // 
 app.use('/api',ordersRoute)
 app.use('/api',orderDetailRoute)
+
+
+app.use("/api", userRoute)
+app.use("/api", authRoute)
+
 // connnect database
 mongoose.connect('mongodb://localhost:27017/nextjs')
     .then(() => console.log("Kết nối db thành công"))
