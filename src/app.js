@@ -5,10 +5,17 @@ import mongoose from 'mongoose';
 
 const app = express();
 
+import userRoute from "../routers/user"
+import authRoute from "../routers/auth"
+
 // middleware
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json())
+
+
+app.use("/api", userRoute)
+app.use("/api", authRoute)
 
 // connnect database
 mongoose.connect('mongodb://localhost:27017/nextjs')
