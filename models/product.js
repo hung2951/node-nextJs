@@ -29,7 +29,8 @@ const productSchema = new Schema({
 
     },
     status: {
-        type: Number,
+        type: Boolean,
+        default:true
 
     },
     category: {
