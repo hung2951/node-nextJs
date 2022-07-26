@@ -16,7 +16,7 @@ const productSchema = new Schema({
         type: Number,
 
     },
-    quantily: {
+    quantity: {
         type: Number,
 
     },
