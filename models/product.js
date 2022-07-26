@@ -12,7 +12,7 @@ const productSchema = new Schema({
         type: Number,
 
     },
-    price_sale: {
+    discount: {
         type: Number,
 
     },
