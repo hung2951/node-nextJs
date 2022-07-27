@@ -28,7 +28,7 @@ export const upload = async (req,res)=>{
     const document = req.body;
     const options = { new: true}
     try {
-        const category = await Category.findByIdAndUpdate(condition,document,options).exec()
+        const category = await Category.findOneAndUpdate(condition,document,options).exec()
         res.json(category)
     } catch (error) {
         res.status(400).json({error})
