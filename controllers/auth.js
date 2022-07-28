@@ -2,7 +2,7 @@ import User from "../models/user"
 import jwt from "jsonwebtoken"
 
 export const signUp = async (req, res) => {
-    const { name, email, password } = req.body
+    const { name, email, password, role } = req.body
     try {
         const existUser = await User.findOne({ email }).exec()
         if (existUser) {
@@ -10,12 +10,13 @@ export const signUp = async (req, res) => {
                 message: "Email đã tồn tại"
             })
         } else {
-            const user = await new User({ name, email, password }).save()
+            const user = await new User({ name, email, password, role }).save()
             res.json({
                 user: {
                     _id: user._id,
                     name: user.name,
-                    email: user.email
+                    email: user.email,
+                    role: user.role
                 }
             })
         }
