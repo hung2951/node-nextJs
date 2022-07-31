@@ -29,7 +29,7 @@ app.use("/api", authRoute)
 app.use("/api", productRoute);
 // connnect database
 // mongoose.connect('mongodb://localhost:27017/nextjs')
-mongoose.connect('mongodb://localhost:27017/nextjs')
+mongoose.connect('mongodb://127.0.0.1:27017/nextjs')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
 // connection
