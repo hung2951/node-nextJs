@@ -7,7 +7,7 @@ import orderDetailRoute from '../routes/order-detail'
 import userRoute from "../routes/user"
 import authRoute from "../routes/auth"
 import productRoute from '../routes/product';
-
+import CommentRoute from '../routes/comment'
 import categoryRouter from '../routes/category'
 const app = express();
 
@@ -15,13 +15,14 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json())
-// 
-app.use('/api',ordersRoute)
-app.use('/api',orderDetailRoute)
-// router
-app.use("/api",categoryRouter)     
+    // 
+app.use('/api', ordersRoute)
+app.use('/api', orderDetailRoute)
+    // router
+app.use("/api", categoryRouter)
 
-
+// comment
+app.use("/api", CommentRoute);
 app.use("/api", userRoute)
 app.use("/api", authRoute)
 
