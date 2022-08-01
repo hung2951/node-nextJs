@@ -45,3 +45,13 @@ export const read = async (req,res)=>{
         res.status(400).json({error})
     }
 }
+export const getOne = async(req,res)=>{
+    const condition ={_id:req.params.id}
+    try {
+        const category =await Category.findOne(condition).exec()
+      
+        res.json(category)
+    } catch (error) {
+        res.status(400).json({error})
+    }
+}
