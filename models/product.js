@@ -10,13 +10,12 @@ const productSchema = new Schema({
     },
     price: {
         type: Number,
-
     },
-    price_sale: {
+    discount: {
         type: Number,
 
     },
-    quantily: {
+    quantity: {
         type: Number,
 
     },
@@ -24,12 +23,13 @@ const productSchema = new Schema({
         type: String,
 
     },
-    description: {
+    desc: {
         type: String,
 
     },
     status: {
-        type: Number,
+        type: Boolean,
+        default:true
 
     },
     category: {
