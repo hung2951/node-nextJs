@@ -9,6 +9,7 @@ import authRoute from "../routes/auth"
 import productRoute from '../routes/product';
 import CommentRoute from '../routes/comment'
 import categoryRouter from '../routes/category'
+import bannerRoute from '../routes/banner'
 const app = express();
 
 // middleware
@@ -20,8 +21,9 @@ app.use('/api', ordersRoute)
 app.use('/api', orderDetailRoute)
     // router
 app.use("/api", categoryRouter)
-
-// comment
+    //banner
+app.use('/api', bannerRoute)
+    // comment
 app.use("/api", CommentRoute);
 app.use("/api", userRoute)
 app.use("/api", authRoute)
