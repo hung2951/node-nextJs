@@ -13,7 +13,5 @@ const comenSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "Product",
     },
-
 }, { timestamps: true })
-
 export default mongoose.model('comment', comenSchema)

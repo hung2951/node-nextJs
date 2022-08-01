@@ -9,7 +9,6 @@ export const list = async(req, res) => {
             message: "Không tìm được sản phẩm anh eiii"
         })
     }
-
 }
 export const post = async(req, res) => {
     try {
@@ -20,7 +19,6 @@ export const post = async(req, res) => {
             message: "Không thêm được sản phẩm"
         })
     }
-
 }
 export const remove = async(req, res) => {
     try {
