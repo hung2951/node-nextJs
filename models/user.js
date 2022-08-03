@@ -20,17 +20,17 @@ const userSchema = new Schema({
     },
     role: {
         type: Number,
-        require: true
+        default: 0
     }
 }, { timeStamp: true });
 
 
 userSchema.methods = {
-    authenticate(password){
+    authenticate(password) {
         return this.password == this.encryPassword(password)
     },
-    encryPassword(password){
-        if(!password) return
+    encryPassword(password) {
+        if (!password) return
         try {
             return createHmac("sha256", "123456").update(password).digest("hex")
         } catch (error) {
@@ -39,7 +39,7 @@ userSchema.methods = {
     }
 }
 
-userSchema.pre("save", function(next){
+userSchema.pre("save", function (next) {
     this.password = this.encryPassword(this.password)
     next();
 })
