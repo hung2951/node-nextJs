@@ -7,5 +7,5 @@ router.get('/products/:id', read)
 router.post('/products', post)
 router.patch('/products/:id', update)
 router.delete('/products/:id', remove)
-router.post("/search", search)
+router.get("/search", search)
 export default router;

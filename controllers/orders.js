@@ -31,7 +31,11 @@ export const read = async (req, res) => {
             idOrder,
             orderDetail
         })
-    } catch (error) {}
+    } catch (error) {
+        res.status(400).json({
+            message:"Không tim được"
+        })
+    }
 }
 
 export const update = async (req, res) => {
@@ -40,12 +44,20 @@ export const update = async (req, res) => {
         res.json({
             order
         })
-    } catch (error) {}
+    } catch (error) {
+        res.status(400).json({
+            message:"Không tim được"
+        })
+    }
 }
 
 export const getOne = async (req, res) => {
     try {
         const product = await Order.findById(req.params.id);
         res.json(product);
-    } catch (error) {}
+    } catch (error) {
+        res.status(400).json({
+            message:"Không tim được"
+        })
+    }
 }
