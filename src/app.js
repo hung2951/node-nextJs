@@ -2,14 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-import ordersRoute from '../routes/orders'
-import orderDetailRoute from '../routes/order-detail'
-import userRoute from "../routes/user"
-import authRoute from "../routes/auth"
-import productRoute from '../routes/product';
-import CommentRoute from '../routes/comment'
-import categoryRouter from '../routes/category'
-import bannerRoute from '../routes/banner'
+import ordersRoute from './routes/orders'
+import orderDetailRoute from './routes/order-detail'
+import userRoute from "./routes/user"
+import authRoute from "./routes/auth"
+import productRoute from './routes/product';
+import CommentRoute from './routes/comment'
+import categoryRouter from './routes/category'
+import bannerRoute from './routes/banner'
 const app = express();
 
 // middleware
