@@ -32,7 +32,7 @@ app.use("/api", authRoute)
 app.use("/api", productRoute);
 // connnect database
 // mongoose.connect('mongodb://localhost:27017/nextjs')
-mongoose.connect('mongodb://127.0.0.1:27017/nextjs')
+mongoose.connect('mongodb+srv://hungtv2951:LnrMYgLM3GGCvS7o@cluster0.ziaqf.mongodb.net/?retryWrites=true&w=majority')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
 // connection
